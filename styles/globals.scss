@@ -1,0 +1,29 @@
+@import "palette.scss";
+@import "../public/fonts/futura/stylesheet.css";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+}
