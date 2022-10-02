@@ -5,6 +5,7 @@ import { Store } from "~/lib/store";
 
 import "../styles/globals.scss";
 import { JWTAuthProvider } from "~/lib/jwt";
+import { APIProvider } from "~/api/rest";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const store = useRef(new Store()).current;
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider store={store}>
       <JWTAuthProvider value={store.auth}>
-        <Component {...pageProps} />
+        <APIProvider tokens={store.auth}>
+          <Component {...pageProps} />
+        </APIProvider>
       </JWTAuthProvider>
     </StoreProvider>
   );
