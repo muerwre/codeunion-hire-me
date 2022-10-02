@@ -1,3 +1,17 @@
-.content {
-  color: var(--text-contrast);
+.heading {
+  margin-bottom: 29px;
+  max-width: 640px;
+}
+
+.panel {
+  border-radius: 25px;
+  background-color: var(--background);
+  padding: 34px 43px 36px 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 14px;
+}
+
+.icon {
+  padding-top: 3px;
 }

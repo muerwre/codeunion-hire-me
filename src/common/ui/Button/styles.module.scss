@@ -1,0 +1,37 @@
+.button {
+  border: none;
+  font-weight: 450;
+
+  &:focus {
+    outline: 2px solid var(--primary);
+  }
+}
+
+.color {
+  &-primary {
+    background-color: var(--primary);
+    color: var(--text-contrast);
+  }
+
+  &-opaque {
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+.size {
+  &-md {
+    height: var(--input-md);
+    border-radius: var(--input-md-radius);
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0 60px;
+  }
+
+  &-sm {
+    height: var(--input-md);
+    border-radius: var(--input-sm-radius);
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

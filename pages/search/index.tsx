@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { FC } from "react";
-import { Container } from "~/common/components/ui/Container";
+import { Container } from "~/common/ui/Container";
 import { useI18n } from "~/lib/i18n";
 import { SearchPanel } from "~/modules/search/containers/SearchPanel";
 import { SearchResults } from "~/modules/search/containers/SearchResults";
