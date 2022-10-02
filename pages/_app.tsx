@@ -4,13 +4,16 @@ import { useRef } from "react";
 import { Store } from "~/lib/store";
 
 import "../styles/globals.scss";
+import { JWTAuthProvider } from "~/lib/jwt";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const store = useRef(new Store()).current;
 
   return (
     <StoreProvider store={store}>
-      <Component {...pageProps} />
+      <JWTAuthProvider value={store.auth}>
+        <Component {...pageProps} />
+      </JWTAuthProvider>
     </StoreProvider>
   );
 }
