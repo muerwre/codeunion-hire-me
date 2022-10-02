@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useI18n } from "~/common/i18n";
+import { useI18n } from "~/lib/i18n";
 
 const Home: NextPage = () => {
   const { t } = useI18n();
