@@ -10,6 +10,14 @@ const ru = {
   signIn: "Войти",
   logout: "Выйти",
   areYouSureWantToExit: "Действительно хотите выйти?",
+  close: "Закрыть",
+  email: "Email",
+  password: "Пароль",
+  register: "Зарегистрироваться",
+  forgotPassword: "Забыли пароль?",
+  registrationNotImplemented:
+    "Регистрация ещё не реализована, но вы можете посмотреть пример в форме входа",
+  ok: "ОК",
 };
 
 export default ru;

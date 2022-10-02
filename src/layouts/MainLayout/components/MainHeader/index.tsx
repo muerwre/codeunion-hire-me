@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import Link from "next/link";
 import React, { FC, useCallback } from "react";
+import { Modal, useModal } from "~/common/modal/ModalProvider";
 import { Button } from "~/common/ui/Button";
 import { Container } from "~/common/ui/Container";
 import { useI18n } from "~/lib/i18n";
@@ -13,6 +14,7 @@ interface MainHeaderProps {}
 const MainHeader: FC<MainHeaderProps> = observer(() => {
   const auth = useAuth();
   const { t } = useI18n();
+  const { open } = useModal();
 
   const logout = useCallback(() => {
     if (!window.confirm(t("areYouSureWantToExit"))) return;
@@ -20,12 +22,12 @@ const MainHeader: FC<MainHeaderProps> = observer(() => {
   }, [auth, t]);
 
   const register = useCallback(() => {
-    window.alert("not implemented");
-  }, []);
+    open(Modal.Register);
+  }, [open]);
 
   const login = useCallback(() => {
-    window.alert("not implemented");
-  }, []);
+    open(Modal.Login);
+  }, [open]);
 
   return (
     <header className={styles.header}>

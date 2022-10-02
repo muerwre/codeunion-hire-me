@@ -3,8 +3,8 @@ import React, { FC } from "react";
 import { ButtonProps as OriginalButtonProps } from "~/utils/dom";
 import styles from "./styles.module.scss";
 
-type ButtonSize = "sm" | "md";
-type ButtonColor = "primary" | "opaque";
+type ButtonSize = "sm" | "md" | "xs";
+type ButtonColor = "primary" | "opaque" | "underline";
 
 interface ButtonProps extends OriginalButtonProps {
   size?: ButtonSize;

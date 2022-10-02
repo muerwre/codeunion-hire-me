@@ -8,6 +8,7 @@ import { JWTAuthProvider } from "~/lib/jwt";
 import { APIProvider } from "~/api/rest";
 import { MainLayout } from "~/layouts/MainLayout";
 import Head from "next/head";
+import { ModalProvider } from "~/common/modal/ModalProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const store = useRef(new Store()).current;
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0"
             />
           </Head>
+
           <MainLayout>
             <Component {...pageProps} />
           </MainLayout>

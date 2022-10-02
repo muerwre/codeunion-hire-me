@@ -23,13 +23,24 @@
       color: var(--primary);
     }
   }
+
+  &-underline {
+    text-decoration: underline;
+    background-color: transparent;
+    color: inherit;
+
+    &:focus {
+      outline: none;
+      color: var(--primary);
+    }
+  }
 }
 
 .size {
   &-md {
     height: var(--input-md);
     border-radius: var(--input-md-radius);
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     padding: 0 60px;
   }

@@ -4,11 +4,11 @@ export type DivProps = React.DetailedHTMLProps<
 >;
 
 export type InputProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLInputElement>,
+  React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
 
 export type ButtonProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLButtonElement>,
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;

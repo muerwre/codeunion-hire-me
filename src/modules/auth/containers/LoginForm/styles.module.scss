@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 8px;
+  color: var(--links-gray);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--text-primary);
+}
