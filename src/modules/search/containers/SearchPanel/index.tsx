@@ -28,7 +28,7 @@ const SearchPanel: FC<SearchPanelProps> = () => {
             </div>
           }
         />
-        <Button>{t("find")}</Button>
+        <Button type="button">{t("find")}</Button>
       </form>
     </section>
   );

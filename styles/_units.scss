@@ -1,5 +1,9 @@
+@import "variables";
+
 :root {
-  --content-width: 1240px;
+  --content-width: #{$content-width};
+  --screen-tablet: #{$screen-tablet};
+
   --header-height: 74px;
   --input-md: 61px;
   --input-md-radius: 15px;
