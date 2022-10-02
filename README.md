@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is test application for CodeUnion.
 
-## Getting Started
+# Running
 
-First, run the development server:
+Check settings at `/.env` first, then run:
 
-```bash
-npm run dev
-# or
+```shell
+yarn
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then navigate to http://localhost:3000/.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# What's been implemented
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Just made a project setup with basic features. Because of some problems specified below, I didn't
+finished it, but you can absolutely judge how I fit your position by completed features.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Not finished tasks just repeat the rest of functionality I was able to complete:
 
-## Learn More
+- NextJS application with
+  [layouts](https://github.com/muerwre/codeunion-hire-me/tree/main/src/layouts/MainLayout),
+  [modular stylesheets](https://github.com/muerwre/codeunion-hire-me/blob/main/pages/search/styles.module.scss),
+  [CSS variables](https://github.com/muerwre/codeunion-hire-me/tree/main/styles),
+  but without SSR at this stage. NextJS, in my opinion, is the best option for that type of
+  projects, that will require SEO-optimizations in future.
+- [Global MobX storage](https://github.com/muerwre/codeunion-hire-me/tree/main/src/lib/store) to
+  store JWT tokens with LocalStorage persistence. That may be done with just React Context and
+  LocalStorage, but that's how I use MobX in projects.
+- [AuthProvider](https://github.com/muerwre/codeunion-hire-me/tree/main/src/lib/jwt), that
+  implements basic authorization functionality;
+- [Multilingual support with i18n stub](https://github.com/muerwre/codeunion-hire-me/tree/main/src/lib/i18n),
+  that can be replaced with i18next or i18n.js lib later. Because implementing i18n even after a
+  month of active project work is painful;
+- [Axios API](https://github.com/muerwre/codeunion-hire-me/tree/main/src/api/rest), that uses JWT
+  authorization and token refresh;
+- [Modal provider](https://github.com/muerwre/codeunion-hire-me/tree/main/src/common/modal/ModalProvider),
+  that shows modals. Made it with react-modal for speed, but it's typed and working;
+- [Simple UI kit](https://github.com/muerwre/codeunion-hire-me/tree/main/src/common/ui), made from
+  scratch to showcase my markup and styling abilities;
 
-To learn more about Next.js, take a look at the following resources:
+# What's not implemented and why
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- API doesn't handle **CORS** requests properly. You should response to **OPTIONS** request for
+  each url with [proper headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Because of
+  that I wasn't able to perform event authorization request;
+- Search results can't be requested without authorization, so, again,
+  [Designs](https://www.figma.com/file/w6T7PHZEcQNN32M5Z9qWUY/Test-Task) doesn't have state for that
+- There's no mobile markup in said
+  [Designs](https://www.figma.com/file/w6T7PHZEcQNN32M5Z9qWUY/Test-Task), so I did my best;
