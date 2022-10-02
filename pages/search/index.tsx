@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { FC } from "react";
 import { Container } from "~/common/ui/Container";
@@ -6,6 +5,7 @@ import { useI18n } from "~/lib/i18n";
 import { useAuth } from "~/lib/jwt";
 import { SearchPanel } from "~/modules/search/containers/SearchPanel";
 import { SearchResults } from "~/modules/search/containers/SearchResults";
+import { SearchProvider } from "~/modules/search/context/SearchProvider";
 import styles from "./styles.module.scss";
 
 const SearchPage: FC = () => {
@@ -13,7 +13,7 @@ const SearchPage: FC = () => {
   const { isUser } = useAuth();
 
   return (
-    <div>
+    <SearchProvider>
       <Head>
         <title>{t("codeUnionTestTask")}</title>
         <meta name="description" content={t("thingsIDOToGetAJob")} />
@@ -38,7 +38,7 @@ const SearchPage: FC = () => {
           )}
         </Container>
       </div>
-    </div>
+    </SearchProvider>
   );
 };
 

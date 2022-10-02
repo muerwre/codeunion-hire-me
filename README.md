@@ -48,3 +48,5 @@ Not finished tasks just repeat the rest of functionality I was able to complete:
   [Designs](https://www.figma.com/file/w6T7PHZEcQNN32M5Z9qWUY/Test-Task) doesn't have state for that
 - There's no mobile markup in said
   [Designs](https://www.figma.com/file/w6T7PHZEcQNN32M5Z9qWUY/Test-Task), so I did my best;
+- Not using [barells](https://lightrun.com/answers/vercel-next-js-tree-shaking-doesnt-work-with-typescript-barrel-files),
+  since it breaks nextjs build optimizations
