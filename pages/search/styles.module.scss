@@ -5,5 +5,16 @@
 }
 
 .results {
-  padding: 61px 0 0 0;
+  padding: 61px 0;
+}
+
+.authorization_prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authorization_warning {
+  font-size: 2rem;
+  color: var(--text-gray);
 }

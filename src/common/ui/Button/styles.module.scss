@@ -1,6 +1,7 @@
 .button {
   border: none;
   font-weight: 450;
+  cursor: pointer;
 
   &:focus {
     outline: 2px solid var(--primary);
@@ -16,6 +17,11 @@
   &-opaque {
     background-color: transparent;
     color: inherit;
+
+    &:focus {
+      outline: none;
+      color: var(--primary);
+    }
   }
 }
 
@@ -23,15 +29,16 @@
   &-md {
     height: var(--input-md);
     border-radius: var(--input-md-radius);
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
     padding: 0 60px;
   }
 
   &-sm {
-    height: var(--input-md);
+    height: var(--input-sm);
     border-radius: var(--input-sm-radius);
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    padding: 0 20px;
   }
 }

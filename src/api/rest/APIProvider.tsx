@@ -14,6 +14,7 @@ interface APIProviderProps extends PropsWithChildren {
     access: string;
     refresh: string;
   };
+  logout: () => void;
 }
 
 const APIContext = createContext({
@@ -22,7 +23,7 @@ const APIContext = createContext({
   }),
 });
 
-const APIProvider: FC<APIProviderProps> = ({ tokens, children }) => {
+const APIProvider: FC<APIProviderProps> = ({ tokens, logout, children }) => {
   const client = useRef(
     axios.create({
       baseURL: process.env.NEXT_PUBLIC_API_ENDPOINT,
@@ -74,6 +75,8 @@ const APIProvider: FC<APIProviderProps> = ({ tokens, children }) => {
           });
         }
 
+        logout();
+
         return Promise.reject(error);
       }
     );
@@ -82,7 +85,7 @@ const APIProvider: FC<APIProviderProps> = ({ tokens, children }) => {
       axios.interceptors.request.eject(req);
       axios.interceptors.request.eject(resp);
     };
-  }, [client, tokens.access, tokens.refresh, refreshTokens]);
+  }, [client, tokens.access, tokens.refresh, refreshTokens, logout]);
 
   return (
     <APIContext.Provider value={{ client }}>{children}</APIContext.Provider>

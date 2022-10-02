@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import React, {
   createContext,
   FC,
@@ -27,21 +28,20 @@ const JWTAuthContext = createContext<JWTContextValue>({
   isUser: false,
 });
 
-const JWTAuthProvider: FC<JWTAuthProviderProps> = ({
-  auth: value,
-  children,
-}) => {
-  const computed = useMemo<JWTContextValue>(
-    () => ({ ...value, isUser: !!value.access }),
-    [value]
-  );
+const JWTAuthProvider: FC<JWTAuthProviderProps> = observer(
+  ({ auth: value, children }) => {
+    const computed = useMemo<JWTContextValue>(
+      () => ({ ...value, isUser: !!value.access }),
+      [value]
+    );
 
-  return (
-    <JWTAuthContext.Provider value={computed}>
-      {children}
-    </JWTAuthContext.Provider>
-  );
-};
+    return (
+      <JWTAuthContext.Provider value={computed}>
+        {children}
+      </JWTAuthContext.Provider>
+    );
+  }
+);
 
 export const useAuth = () => useContext(JWTAuthContext);
 

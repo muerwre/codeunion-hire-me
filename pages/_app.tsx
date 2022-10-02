@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider store={store}>
       <JWTAuthProvider auth={store.auth}>
-        <APIProvider tokens={store.auth}>
+        <APIProvider tokens={store.auth} logout={store.auth.logout}>
           <Head>
             <meta
               name="viewport"
