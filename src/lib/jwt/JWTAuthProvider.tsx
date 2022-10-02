@@ -1,7 +1,13 @@
-import React, { createContext, FC, PropsWithChildren, useContext } from "react";
+import React, {
+  createContext,
+  FC,
+  PropsWithChildren,
+  useContext,
+  useMemo,
+} from "react";
 
 interface JWTAuthProviderProps extends PropsWithChildren {
-  value: {
+  auth: {
     access: string;
     refresh: string;
     setTokens: (access: string, refresh: string) => void;
@@ -9,16 +15,33 @@ interface JWTAuthProviderProps extends PropsWithChildren {
   };
 }
 
-const JWTAuthContext = createContext<JWTAuthProviderProps["value"]>({
+type JWTContextValue = JWTAuthProviderProps["auth"] & {
+  isUser: boolean;
+};
+
+const JWTAuthContext = createContext<JWTContextValue>({
   access: "",
   refresh: "",
   setTokens: () => {},
   logout: () => {},
+  isUser: false,
 });
 
-const JWTAuthProvider: FC<JWTAuthProviderProps> = ({ value, children }) => (
-  <JWTAuthContext.Provider value={value}>{children}</JWTAuthContext.Provider>
-);
+const JWTAuthProvider: FC<JWTAuthProviderProps> = ({
+  auth: value,
+  children,
+}) => {
+  const computed = useMemo<JWTContextValue>(
+    () => ({ ...value, isUser: !!value.access }),
+    [value]
+  );
+
+  return (
+    <JWTAuthContext.Provider value={computed}>
+      {children}
+    </JWTAuthContext.Provider>
+  );
+};
 
 export const useAuth = () => useContext(JWTAuthContext);
 

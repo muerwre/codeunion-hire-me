@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--background);
+  border-radius: 0 0 20px 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav {
+  flex: 1;
+
+  & > a {
+    color: var(--text-gray);
+  }
+}

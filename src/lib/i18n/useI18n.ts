@@ -1,11 +1,10 @@
 import { useCallback, useMemo, useRef } from "react";
-import en from "./translations/en";
 import ru from "./translations/ru";
 import { has } from "lodash";
 
-const availableLocales = { ru, en };
+const availableLocales = { ru };
 
-type Key = keyof typeof en & keyof typeof ru;
+type Key = keyof typeof ru;
 type Locale = keyof typeof availableLocales;
 
 const defaultLocale: Locale = "ru";
