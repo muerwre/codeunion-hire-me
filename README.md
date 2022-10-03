@@ -38,6 +38,8 @@ Not finished tasks just repeat the rest of functionality I was able to complete:
   that shows modals. Made it with react-modal for speed, but it's typed and working;
 - [Simple UI kit](https://github.com/muerwre/codeunion-hire-me/tree/main/src/common/ui), made from
   scratch to showcase my markup and styling abilities;
+- Actual [search results page](https://github.com/muerwre/codeunion-hire-me/blob/main/src/modules/search/containers/SearchResults/index.tsx)
+  with css auto-fill grid and pagination on scroll; [paginated result loading](https://github.com/muerwre/codeunion-hire-me/blob/main/src/modules/search/hooks/useSearchQuery.ts) with [SWR-managed cache](https://swr.vercel.app/ru).
 
 # What's not implemented and why
 
